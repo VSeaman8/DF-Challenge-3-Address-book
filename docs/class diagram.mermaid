@@ -1,0 +1,59 @@
+classDiagram
+
+    class AddressBook{
+        - contacts : List<Contact>
+        + addContact(contact: Contact) void
+        + removeContact(criteria: String): List<Contact>
+        + searchContact(criteria: String) List<Contact>
+        + displayAllContacts(): List<Contact>
+        + editContact(oldContact: Contact, newContact: Contact): void
+    }
+
+    class Contact{
+        - name: String
+        - phoneNumber: String
+        - email: String
+        + getName():String
+        + getPhoneNumber() String
+        + getEmail(): String
+        + setName(name: String): void
+        + setPhoneNumber(PhoneNumber: String) void
+        + setEmail(email: String) void
+    }
+
+    class ContactManager {
+        + addContact(contact: Contact) void
+        + removeContact(criteria: String): List<Contact>
+        + updateContact(oldContact: Contact, newContact: Contact): void
+        + removeAllContacts(deleteAllContacts: String): List<Contact>
+
+    }
+
+    class SearchEngine {
+        + searchName(name: String): List<Contact>
+        + searchPhone(PhoneNumber: String): List<Contact>
+        + searchEmail(email: String): LIst<Contact>
+
+    }
+
+    class UserInterface {
+    + displayMenu(): void
+    + userInput(): String
+    + displayResults(results: List<Contact>): void
+    + displayContacts(contact: Contact): void
+    }
+
+    class FileHandler {
+
+    }
+
+    class Display {
+        + contactsDisplayAlphabet(contact: Contact): void
+    }
+    class DangerAllContacts {
+        + deleteAllContacts():
+        + confirmDeleteAllContacts(confirm: String):
+    }
+
+AddressBook  --> ContactManager
+ContactManager --> SearchEngine
