@@ -5,6 +5,14 @@ public class Contact {
     private String email;
     private String phone;
 
+    // Constructor without Arguments
+    public Contact(){
+        this.name = "";
+        this.email = "";
+        this.phone = "";
+    }
+
+    // Constructor with Arguments
     public Contact(String name, String email, String phone){
         this.name = name;
         this.email = email;
