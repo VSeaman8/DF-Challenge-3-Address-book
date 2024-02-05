@@ -1,15 +1,15 @@
 classDiagram
 
-    class AddressBook{
-        - contacts : List<Contact>
-        + addContact(contact: Contact) void
-        + removeContact(criteria: String): List<Contact>
-        + searchContact(criteria: String) List<Contact>
-        + displayAllContacts(): List<Contact>
-        + editContact(oldContact: Contact, newContact: Contact): void
+    class com.app.AddressBook{
+        - contacts : List<com.app.Contact>
+        + addContact(contact: com.app.Contact) void
+        + removeContact(criteria: String): List<com.app.Contact>
+        + searchContact(criteria: String) List<com.app.Contact>
+        + displayAllContacts(): List<com.app.Contact>
+        + editContact(oldContact: com.app.Contact, newContact: com.app.Contact): void
     }
 
-    class Contact{
+    class com.app.Contact{
         - name: String
         - phoneNumber: String
         - email: String
@@ -21,26 +21,26 @@ classDiagram
         + setEmail(email: String) void
     }
 
-    class ContactManager {
-        + addContact(contact: Contact) void
-        + removeContact(criteria: String): List<Contact>
-        + updateContact(oldContact: Contact, newContact: Contact): void
-        + removeAllContacts(deleteAllContacts: String): List<Contact>
+    class com.app.ContactManager {
+        + addContact(contact: com.app.Contact) void
+        + removeContact(criteria: String): List<com.app.Contact>
+        + updateContact(oldContact: com.app.Contact, newContact: com.app.Contact): void
+        + removeAllContacts(deleteAllContacts: String): List<com.app.Contact>
 
     }
 
     class SearchEngine {
-        + searchName(name: String): List<Contact>
-        + searchPhone(PhoneNumber: String): List<Contact>
-        + searchEmail(email: String): LIst<Contact>
+        + searchName(name: String): List<com.app.Contact>
+        + searchPhone(PhoneNumber: String): List<com.app.Contact>
+        + searchEmail(email: String): LIst<com.app.Contact>
 
     }
 
     class UserInterface {
     + displayMenu(): void
     + userInput(): String
-    + displayResults(results: List<Contact>): void
-    + displayContacts(contact: Contact): void
+    + displayResults(results: List<com.app.Contact>): void
+    + displayContacts(contact: com.app.Contact): void
     }
 
     class FileHandler {
@@ -48,12 +48,12 @@ classDiagram
     }
 
     class Display {
-        + contactsDisplayAlphabet(contact: Contact): void
+        + contactsDisplayAlphabet(contact: com.app.Contact): void
     }
     class DangerAllContacts {
         + deleteAllContacts():
         + confirmDeleteAllContacts(confirm: String):
     }
 
-AddressBook  --> ContactManager
-ContactManager --> SearchEngine
+com.app.AddressBook  --> com.app.ContactManager
+com.app.ContactManager --> SearchEngine
