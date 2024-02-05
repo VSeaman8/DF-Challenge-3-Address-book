@@ -28,7 +28,7 @@ public class ContactManagerTests {
         }
 
         }
-        @Nested
+    @Nested
     @DisplayName("Test 2 Added contact information is correctly stored in the address book")
 
     class ContactInfoCorrectlyStoredInAddressBook {
@@ -44,6 +44,23 @@ public class ContactManagerTests {
             assertEquals(contact, contactManager.getContacts().get(0), "Contact details should match the added contact");
         }
         }
+    @Nested
+    @DisplayName("Test 3: Verify how the system behaves when trying to add a contact without any information")
+
+    class SystemBehaviourWhenNoInfoAdded {
+
+        @Test
+        void SystemBehaviorWhenNoInfoAdded(){
+            // Arrange
+            ContactManager contactManager = new ContactManager();
+            Contact contact = new Contact();
+            // Act & Assert
+            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(contact));
+
+        }
+
+    }
+
         }
 
 

@@ -7,10 +7,10 @@
 ## 1. As a user I want to be able to add a contact to my address book do that I can use that information to contact them
 
 ### Tests
-1. com.app.ContactManager adds contact to com.app.Contact
-2. Added contact information is correctly stored in the address book.
-3. Verify how the system behaves when trying to add a contact without any information.
-4. Verify how the system behaves when trying to add a contact with only partial information.
+1. Test 1: com.app.ContactManager adds contact to com.app.Contact
+2. Test 2: Added contact information is correctly stored in the address book.
+3. Test 3:Verify how the system behaves when trying to add a contact without any information.
+4. Test 4: Verify how the system behaves when trying to add a contact with only partial information.
 
 ---
 
