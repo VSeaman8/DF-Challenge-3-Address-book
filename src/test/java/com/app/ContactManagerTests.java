@@ -50,7 +50,7 @@ public class ContactManagerTests {
     class SystemBehaviourWhenNoInfoAdded {
 
         @Test
-        void SystemBehaviorWhenNoInfoAdded(){
+        void TestSystemBehaviorWhenNoInfoAdded(){
             // Arrange
             ContactManager contactManager = new ContactManager();
             Contact contact = new Contact();
@@ -59,6 +59,22 @@ public class ContactManagerTests {
 
         }
 
+    }
+
+    @Nested
+    @DisplayName("Test 4: Verify how the system behaves when trying to add a contact with only partial information")
+
+    class SystemBehaviorWithPartialInfoAdded{
+
+        @Test
+        void TestSystemBehaviorWithPartialInfoAdded(){
+            // Arrange
+            ContactManager contactManager = new ContactManager();
+            Contact contact = new Contact("Harry");
+            // Assert and Act
+            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(contact));
+
+        }
     }
 
         }
