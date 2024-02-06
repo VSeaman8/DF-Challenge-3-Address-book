@@ -44,7 +44,7 @@ public class ContactManagerTests {
                     .withName("Harry Potter")
                     .withEmail( "harrypotter@hogwarts.co.uk")
                     .withPhone("1234567890")
-                    .build();;
+                    .build();
             // Act
             contactManager.addContact(contact);
             // Assert
