@@ -19,7 +19,11 @@ public class ContactManagerTests {
          void testAddContact(){
             // Arrange
             ContactManager contactManager = new ContactManager();
-            Contact contact = new Contact("Harry Potter", "harrypotter@hogwarts.co.uk", "1234567890");
+            Contact contact = new Contact.Builder()
+                    .withName("Harry Potter")
+                    .withEmail( "harrypotter@hogwarts.co.uk")
+                    .withPhone("1234567890")
+                    .build();
             // Act
             contactManager.addContact(contact);
             // Assert
@@ -36,7 +40,11 @@ public class ContactManagerTests {
         void ContactInfoInAddressBook(){
             // Arrange
             ContactManager contactManager = new ContactManager();
-            Contact contact = new Contact("Harry Potter", "harrypotter@hogwarts.co.uk", "1234567890");
+            Contact contact = new Contact.Builder()
+                    .withName("Harry Potter")
+                    .withEmail( "harrypotter@hogwarts.co.uk")
+                    .withPhone("1234567890")
+                    .build();;
             // Act
             contactManager.addContact(contact);
             // Assert
@@ -53,9 +61,10 @@ public class ContactManagerTests {
         void TestSystemBehaviorWhenNoInfoAdded(){
             // Arrange
             ContactManager contactManager = new ContactManager();
-            Contact contact = new Contact();
+            Contact.Builder builder = new Contact.Builder();
+
             // Act & Assert
-            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(contact));
+            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(builder.build()));
 
         }
 
@@ -70,9 +79,10 @@ public class ContactManagerTests {
         void TestSystemBehaviorWithPartialInfoAdded(){
             // Arrange
             ContactManager contactManager = new ContactManager();
-            Contact contact = new Contact("Harry");
+            Contact.Builder builder = new Contact.Builder();
+            builder.withName("Harry");
             // Assert and Act
-            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(contact));
+            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(builder.build()));
 
         }
     }
