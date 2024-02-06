@@ -81,4 +81,34 @@ public class SearchEngineTests {
         }
 
     }
+
+    @Nested
+    @DisplayName("Test 8: Verify how the system behaves when searching for a name with special characters or numbers.")
+
+    class SystemBehaviourWithSpecialCharacters{
+
+        void systemBehaviourWithSpecialCharactersTest() {
+            // Arrange
+            ContactManager contactManager = new ContactManager();
+            Contact contact = new Contact.Builder()
+                    .withName("Harry Potter")
+                    .withEmail("harrypotter@hogwarts.co.uk")
+                    .withPhone("1234567890")
+                    .build();
+
+            Contact contact2 = new Contact.Builder()
+                    .withName("Hermy Gr@nger")
+                    .withEmail("hermyGranger@hogwarts.co.uk")
+                    .withPhone("0987654321")
+                    .build();
+
+            SearchEngine searchEngine = new SearchEngine();
+            // Act
+            contactManager.addContact(contact);
+            contactManager.addContact(contact2);
+            List<Contact> searchResults = searchEngine.searchName("Hermy Gr@nger", contactManager.getContacts());
+            // Assert
+            assertEquals(contact2, searchResults.get(0));
+        }
+    }
 }
