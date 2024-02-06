@@ -1,6 +1,6 @@
 classDiagram
 
-    class com.app.AddressBook{
+    class AddressBook{
         - contacts : List<com.app.Contact>
         + addContact(contact: com.app.Contact) void
         + removeContact(criteria: String): List<com.app.Contact>
@@ -9,7 +9,7 @@ classDiagram
         + editContact(oldContact: com.app.Contact, newContact: com.app.Contact): void
     }
 
-    class com.app.Contact{
+    class Contact{
         - name: String
         - phoneNumber: String
         - email: String
@@ -21,7 +21,7 @@ classDiagram
         + setEmail(email: String) void
     }
 
-    class com.app.ContactManager {
+    class ContactManager {
         + addContact(contact: com.app.Contact) void
         + removeContact(criteria: String): List<com.app.Contact>
         + updateContact(oldContact: com.app.Contact, newContact: com.app.Contact): void
@@ -55,5 +55,5 @@ classDiagram
         + confirmDeleteAllContacts(confirm: String):
     }
 
-com.app.AddressBook  --> com.app.ContactManager
-com.app.ContactManager --> SearchEngine
+AddressBook  --> ContactManager
+ContactManager --> SearchEngine

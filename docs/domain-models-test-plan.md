@@ -17,10 +17,10 @@
 ## 2. As a user I want to be able to search for a contact by name so that I can contact them
 
 ### Tests
-1. check that a contact can be searched by name.
-2. check that the correct contact is returned when searched by name.
-3. Verify how the system behaves when searching for a name that does not exist in the address book.
-4. Verify how the system behaves when searching for a name with special characters or numbers.
+1. Test 5: check that a contact can be searched by name.
+2. Test 6: check that the correct contact is returned when searched by name.
+3. Test 7: Verify how the system behaves when searching for a name that does not exist in the address book.
+4. Test 8: Verify how the system behaves when searching for a name with special characters or numbers.
 
 ---
 
