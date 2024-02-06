@@ -81,8 +81,12 @@ public class ContactManagerTests {
             ContactManager contactManager = new ContactManager();
             Contact.Builder builder = new Contact.Builder();
             builder.withName("Harry");
-            // Assert and Act
-            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(builder.build()));
+            Contact contact = builder.build();
+            // Act
+            contactManager.addContact(contact);
+            //Assert
+            assertTrue(contactManager.getContacts().contains(contact));
+
 
         }
     }

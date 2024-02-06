@@ -55,4 +55,28 @@ public class SearchEngineTests {
         }
 
     }
+
+    /*@Nested
+    @DisplayName("Test 7: Verify how the system behaves when searching for a name that does not exist in the address book.")
+    class SystemBehaviourWithNameNotExisting {
+
+        @Test
+        void systemBehaviourWithNameNotExistingTest(){
+            // Arrange
+            ContactManager contactManager = new ContactManager();
+            Contact contact = new Contact.Builder()
+                    .withName("Harry Potter")
+                    .withEmail("harrypotter@hogwarts.co.uk")
+                    .withPhone("1234567890")
+                    .build();
+            SearchEngine searchEngine = new SearchEngine();
+            // Act
+            contactManager.addContact(contact);
+            List<Contact> searchResults = searchEngine.searchName("", contactManager.getContacts());
+            // Assert
+            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(builder.build()));
+
+        }
+
+    }*/
 }
