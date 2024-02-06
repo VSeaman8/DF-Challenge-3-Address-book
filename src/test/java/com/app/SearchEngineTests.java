@@ -56,7 +56,7 @@ public class SearchEngineTests {
 
     }
 
-    /*@Nested
+    @Nested
     @DisplayName("Test 7: Verify how the system behaves when searching for a name that does not exist in the address book.")
     class SystemBehaviourWithNameNotExisting {
 
@@ -72,11 +72,11 @@ public class SearchEngineTests {
             SearchEngine searchEngine = new SearchEngine();
             // Act
             contactManager.addContact(contact);
-            List<Contact> searchResults = searchEngine.searchName("", contactManager.getContacts());
+            List<Contact> searchResults = searchEngine.searchName("Ron Weasly", contactManager.getContacts());
             // Assert
-            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(builder.build()));
+            assertThrows(IllegalArgumentException.class, () -> searchEngine.searchName("Ron Weasly", contactManager.getContacts()));
 
         }
 
-    }*/
+    }
 }
