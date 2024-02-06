@@ -55,5 +55,9 @@ classDiagram
         + confirmDeleteAllContacts(confirm: String):
     }
 
+UserInterface --> AddressBook
 AddressBook  --> ContactManager
-ContactManager --> SearchEngine
+AddressBook --> SearchEngine
+ContactManager --> Contact
+ContactManager --> DangerAllContacts
+SearchEngine --> Contact
