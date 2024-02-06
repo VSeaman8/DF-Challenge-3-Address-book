@@ -27,10 +27,10 @@
 ## 3. As a user I want to be able to see my search results so that I can check I am contacting the right person
 
 ### Tests
-1. search results are displayed to user.
-2. search results contain the correct contact information.
-3. Verify how the system behaves when there are no search results.
-4. Verify how the system behaves when there are multiple search results.
+1. Test 9: search results are displayed to user.
+2. Test 10: search results contain the correct contact information.
+3. Test 11: Verify how the system behaves when there are no search results.
+4. Test 12: Verify how the system behaves when there are multiple search results.
 ---
 
 ## 4. As a user I want to be able to remove a contact from the address book as I am longer friends with them
