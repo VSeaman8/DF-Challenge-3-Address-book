@@ -72,9 +72,11 @@ public class SearchEngineTests {
             SearchEngine searchEngine = new SearchEngine();
             // Act
             contactManager.addContact(contact);
-            List<Contact> searchResults = searchEngine.searchName("Ron Weasly", contactManager.getContacts());
+            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+                searchEngine.searchName("Ron Weasley", contactManager.getContacts());
+            });
             // Assert
-            assertThrows(IllegalArgumentException.class, () -> searchEngine.searchName("Ron Weasly", contactManager.getContacts()));
+            assertEquals("No contacts have been found with the name: Ron Weasley", exception.getMessage());
 
         }
 

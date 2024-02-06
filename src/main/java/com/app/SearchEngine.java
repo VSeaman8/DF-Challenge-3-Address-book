@@ -13,6 +13,10 @@ public class SearchEngine {
                 searchResults.add(contact);
             }
         }
+
+        if (searchResults.isEmpty()){
+            throw new IllegalArgumentException("No contacts have been found with the name: " + name);
+        }
         return searchResults;
     }
 }
