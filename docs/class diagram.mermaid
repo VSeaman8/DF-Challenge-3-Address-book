@@ -1,12 +1,12 @@
 classDiagram
 
     class AddressBook{
-        - contacts : List<com.app.Contact>
-        + addContact(contact: com.app.Contact) void
-        + removeContact(criteria: String): List<com.app.Contact>
-        + searchContact(criteria: String) List<com.app.Contact>
-        + displayAllContacts(): List<com.app.Contact>
-        + editContact(oldContact: com.app.Contact, newContact: com.app.Contact): void
+        - contacts : List<Contact>
+        + addContact(contact: Contact) void
+        + removeContact(criteria: String): List<Contact>
+        + searchContact(criteria: String) List<cContact>
+        + displayAllContacts(): List<cContact>
+        + editContact(oldContact: Contact, newContact: Contact): void
     }
 
     class Contact{
@@ -22,25 +22,25 @@ classDiagram
     }
 
     class ContactManager {
-        + addContact(contact: com.app.Contact) void
-        + removeContact(criteria: String): List<com.app.Contact>
-        + updateContact(oldContact: com.app.Contact, newContact: com.app.Contact): void
-        + removeAllContacts(deleteAllContacts: String): List<com.app.Contact>
+        + addContact(contact: Contact) void
+        + removeContact(criteria: String): List<cContact>
+        + updateContact(oldContact: Contact, newContact: Contact): void
+        + removeAllContacts(deleteAllContacts: String): List<cContact>
 
     }
 
     class SearchEngine {
-        + searchName(name: String): List<com.app.Contact>
-        + searchPhone(PhoneNumber: String): List<com.app.Contact>
-        + searchEmail(email: String): LIst<com.app.Contact>
+        + searchName(name: String): List<cContact>
+        + searchPhone(PhoneNumber: String): List<cContact>
+        + searchEmail(email: String): List<cContact>
 
     }
 
     class UserInterface {
     + displayMenu(): void
     + userInput(): String
-    + displayResults(results: List<com.app.Contact>): void
-    + displayContacts(contact: com.app.Contact): void
+    + displayResults(results: List<cContact>): void
+    + displayContacts(contact: List<cContact>): void
     }
 
     class FileHandler {
@@ -48,7 +48,7 @@ classDiagram
     }
 
     class Display {
-        + contactsDisplayAlphabet(contact: com.app.Contact): void
+        + displayResults(contact:Contact): void
     }
     class DangerAllContacts {
         + deleteAllContacts():
