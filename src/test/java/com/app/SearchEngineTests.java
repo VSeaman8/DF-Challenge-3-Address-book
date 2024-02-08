@@ -111,4 +111,5 @@ public class SearchEngineTests {
             assertEquals(contact2, searchResults.get(0));
         }
     }
+
 }

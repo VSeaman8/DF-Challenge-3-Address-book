@@ -28,18 +28,16 @@
 
 ### Tests
 1. Test 9: search results are displayed to user.
-2. Test 10: search results contain the correct contact information.
-3. Test 11: Verify how the system behaves when there are no search results.
-4. Test 12: Verify how the system behaves when there are multiple search results.
+
 ---
 
 ## 4. As a user I want to be able to remove a contact from the address book as I am longer friends with them
 
 ### Tests
-1. Check a contact can be removed from the address book.
-2. Check that the removed contact is no longer in the address book.
-3. Verify how the system behaves when trying to remove a contact that does not exist in the address book.
-4. Verify how the system behaves when trying to remove a contact that has already been removed.
+1. Test 10: Check a contact can be removed from the address book.
+2. Test 11: Check that the removed contact is no longer in the address book.
+3. Test 12: Verify how the system behaves when trying to remove a contact that does not exist in the address book.
+4. Test 13: Verify how the system behaves when trying to remove a contact that has already been removed.
 
 ---
 

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ContactManagerTests {
 
     @Nested
-    @DisplayName("com.app.ContactManager adds contact to com.app.Contact")
+    @DisplayName("ContactManager adds contact to Contact")
 
     class ContactManagerAddsToContact {
         @Test
@@ -90,6 +90,26 @@ public class ContactManagerTests {
 
         }
     }
+    @Test
+    @DisplayName("Test 10: Check a contact can be removed from the address book")
+
+    void ContactRemovedFromAddressBook(){
+
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail( "harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        contactManager.addContact(contact);
+
+        // Act
+        contactManager.removeContact(contact);
+        // Assert
+        assertFalse(contactManager.getContacts().contains(contact));
+    }
+
 
         }
 
