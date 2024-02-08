@@ -110,6 +110,33 @@ public class ContactManagerTests {
         assertFalse(contactManager.getContacts().contains(contact));
     }
 
+    @Test
+    @DisplayName("Test 11: Verify how the system behaves when trying to remove a contact that does not exist in the address book.")
+
+    void ContactDoesNotExistTryToRemove(){
+        // Arrange
+
+        ContactManager contactManager = new ContactManager();
+        Contact contact = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail( "harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        contactManager.addContact(contact);
+
+        // Act
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            contactManager.removeContact(new Contact.Builder()
+                    .withName("Ron Weasley")
+                    .withEmail("ronweasley@hogwarts.co.uk")
+                    .withPhone("9876543210")
+                    .build());
+        });
+
+        // Assert
+        assertEquals("Contact not found in address book", exception.getMessage());
+    }
+
 
         }
 

@@ -35,9 +35,8 @@
 
 ### Tests
 1. Test 10: Check a contact can be removed from the address book.
-2. Test 11: Check that the removed contact is no longer in the address book.
-3. Test 12: Verify how the system behaves when trying to remove a contact that does not exist in the address book.
-4. Test 13: Verify how the system behaves when trying to remove a contact that has already been removed.
+2. Test 11: Verify how the system behaves when trying to remove a contact that does not exist in the address book.
+3. Test 12: Verify how the system behaves when trying to remove a contact that has already been removed
 
 ---
 
