@@ -19,6 +19,9 @@ public class ContactManager {
 
     // Remove Contacts
     public void removeContact(Contact contact){
+        if (!contacts.contains(contact)){
+            throw new IllegalArgumentException("Contact not found in address book");
+        }
         contacts.remove(contact);
     }
 
