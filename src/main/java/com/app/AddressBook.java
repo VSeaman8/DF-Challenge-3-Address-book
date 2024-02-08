@@ -26,5 +26,8 @@ public class AddressBook {
     public List<Contact> searchName(String name) {
         return searchEngine.searchName(name, contactManager.getContacts());
     }
+
+    // Removing Contacts
+
 }
 

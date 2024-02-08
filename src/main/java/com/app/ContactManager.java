@@ -17,6 +17,11 @@ public class ContactManager {
         contacts.add(contact);
     }
 
+    // Remove Contacts
+    public void removeContact(Contact contact){
+        contacts.remove(contact);
+    }
+
     // Getters and Setters
     public List<Contact> getContacts(){
         return contacts;
