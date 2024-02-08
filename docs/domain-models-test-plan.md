@@ -36,15 +36,14 @@
 ### Tests
 1. Test 10: Check a contact can be removed from the address book.
 2. Test 11: Verify how the system behaves when trying to remove a contact that does not exist in the address book.
-3. Test 12: Verify how the system behaves when trying to remove a contact that has already been removed
 
 ---
 
 ## 5. As a user I want to be able to edit a contacts details as they have changed address
 
 ### Tests
-1. Check that a contact's details can be edited.
-2. Edited details are correctly updated in the address book.
+1. Test 12: Edited details are correctly updated in the address book.
+2. 
 3. Verify how the system behaves when trying to edit a contact that does not exist in the address book.
 4. Verify how the system behaves when trying to edit a contact with invalid or incomplete information.
 

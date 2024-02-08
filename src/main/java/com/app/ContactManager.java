@@ -9,7 +9,7 @@ public class ContactManager {
     public ContactManager(){
         this.contacts = new ArrayList<>();
     }
-
+    // Add Contact
     public void addContact(Contact contact) {
         if (contact.getName().isEmpty()){
             throw new IllegalArgumentException("Contact information is incomplete");

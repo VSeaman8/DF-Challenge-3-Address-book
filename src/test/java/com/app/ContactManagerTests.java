@@ -137,6 +137,24 @@ public class ContactManagerTests {
         assertEquals("Contact not found in address book", exception.getMessage());
     }
 
+    @Test
+    @DisplayName("Test 12: Edited details are correctly updated in the address book.")
+
+    void EditContactDetails(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail( "harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        contactManager.addContact(contact);
+        // Act
+        contactManager.editContact(new Contact.builder()
+                .withPhone("0987654321"));
+        // Assert
+        assertEquals
+    }
 
         }
 

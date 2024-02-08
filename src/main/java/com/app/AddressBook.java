@@ -13,7 +13,7 @@ public class AddressBook {
     }
 
     // Adding Contacts
-    public void addContact(String name, String email, String phone){
+    public void addContactToAddressBook(String name, String email, String phone){
         Contact contact = new Contact.Builder()
                 .withName(name)
                 .withEmail(email)
@@ -28,6 +28,11 @@ public class AddressBook {
     }
 
     // Removing Contacts
+    public void removeContactFromAddressBook(Contact contact){
+        contactManager.removeContact(contact);
+
+
+    }
 
 }
 
