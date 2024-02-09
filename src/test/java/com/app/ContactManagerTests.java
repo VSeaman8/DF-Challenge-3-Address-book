@@ -250,6 +250,7 @@ public class ContactManagerTests {
                 .withPhone("0987654321")
                 .build();
 
+
         contactManager.addContact(contact1);
         contactManager.addContact(contact2);
         // Act
@@ -257,6 +258,46 @@ public class ContactManagerTests {
 
         // Assert
         assertEquals(2, contacts.size());
+        assertTrue(contacts.contains(contact1));
+        assertTrue(contacts.contains(contact2));
+
+    }
+    @Test
+    @DisplayName("Test 18: correct number of contacts is displayed when viewing all contacts.")
+
+    void CorrectNumberOfContactsDisplayed(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact1 = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail("harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        Contact contact2 = new Contact.Builder()
+                .withName("Hermy Gr@nger")
+                .withEmail("hermyGranger@hogwarts.co.uk")
+                .withPhone("0987654321")
+                .build();
+        Contact contact3 = new Contact.Builder()
+                .withName("Ron Weasley")
+                .withEmail("ronweasley@hogwarts.co.uk")
+                .withPhone("2468097531")
+                .build();
+       Contact contact4 = new Contact.Builder()
+                .withName("Luna Lovegood")
+                .withEmail("lillylovegood@hogwarts.co.uk")
+                .withPhone("1357908642")
+                .build();
+        contactManager.addContact(contact1);
+        contactManager.addContact(contact2);
+        contactManager.addContact(contact3);
+        contactManager.addContact(contact4);
+
+        // Act
+        List<Contact> contacts = contactManager.getAllContacts();
+
+        // Assert
+        assertEquals(4, contacts.size());
         assertTrue(contacts.contains(contact1));
         assertTrue(contacts.contains(contact2));
 
