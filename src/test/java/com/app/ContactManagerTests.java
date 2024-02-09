@@ -170,6 +170,25 @@ public class ContactManagerTests {
 
     }
 
+    @Test
+    @DisplayName("Test 14: Verify how the system behaves when trying to edit a contact with invalid or incomplete information.")
+
+    void EditContactDetailsWhenContactPartiallyAdded(){
+
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact.Builder builder = new Contact.Builder();
+        builder.withName("Harry");
+        Contact contact = builder.build();
+        contactManager.addContact(contact);
+        // Act
+        contactManager.editContactName("Harry", "Harry James Potter");
+        contactManager.editContactEmail("Harry James Potter", "harryjamespotter@hotwarts.co.uk");
+        // Assert
+        Contact retrievedContact = contactManager.findContact("Harry James Potter");
+        assertEquals("Harry James Potter", retrievedContact.getName());
+        assertEquals("harryjamespotter@hotwarts.co.uk", retrievedContact.getEmail());
+    }
         }
 
 

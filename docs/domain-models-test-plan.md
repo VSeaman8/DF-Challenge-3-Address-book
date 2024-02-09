@@ -44,12 +44,11 @@
 ### Tests
 1. Test 12: Edited details are correctly updated in the address book.
 2. Test 13:  Verify how the system behaves when trying to edit a contact that does not exist in the address book.
-3.
-4. Verify how the system behaves when trying to edit a contact with invalid or incomplete information.
+3. Test 14: Verify how the system behaves when trying to edit a contact with invalid or incomplete information.
 
 ---
 
-## 6. As a user I do not want to have duplicate phone numbers and address so that
+## 6. As a user I do not want to have duplicate phone numbers and address so that can ensure each contact is uniquw and avoids confusion when searching/updating contact information
 
 ### Tests
 1. check that the system does not allow duplicate phone numbers for a contact.
