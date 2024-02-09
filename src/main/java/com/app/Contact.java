@@ -25,6 +25,20 @@ public class Contact {
         return phone;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+        }
+
+    public void setPhone(String phone){
+        this.phone = phone;
+    }
+
+
+
     // Builder class for constructing Contact objects
     public static class Builder {
         private String name = "";

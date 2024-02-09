@@ -22,10 +22,15 @@ classDiagram
     }
 
     class ContactManager {
+        - Contact (List contact)
         + addContact(contact: Contact) void
-        + removeContact(criteria: String): List<cContact>
-        + updateContact(oldContact: Contact, newContact: Contact): void
+        + removeContact(contact: Contact): List<Contact>
+        + editContactName(String oldName, String newName)
+        + editContactEmail(String name, String newEmail)
+        + editContactPhone(String name, String newPhone)
         + removeAllContacts(deleteAllContacts: String): List<cContact>
+        + getContact(): List
+        + findContact(String name)
 
     }
 

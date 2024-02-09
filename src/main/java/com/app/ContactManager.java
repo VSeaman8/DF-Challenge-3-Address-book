@@ -24,9 +24,44 @@ public class ContactManager {
         }
         contacts.remove(contact);
     }
+    // Edit Contacts
+    public void editContactName(String oldName, String newName){
+        for (Contact contact : contacts) {
+            if (contact.getName().equals(oldName)){
+                contact.setName(newName);
+                break;
+            }
+        }
+    }
+
+    public void editContactEmail(String name, String newEmail){
+        for (Contact contact : contacts){
+            if (contact.getName().equals(name)){
+                contact.setEmail(newEmail);
+                break;
+            }
+        }
+    }
+
+    public void editContactPhone(String name, String newPhone){
+        for (Contact contact : contacts){
+            if (contact.getName().equals(name)){
+                contact.setPhone(newPhone);
+                break;
+            }
+        }
+    }
 
     // Getters and Setters
     public List<Contact> getContacts(){
         return contacts;
+    }
+
+    public Contact findContact(String name){
+        for (Contact contact : contacts){
+            if (contact.getName().equals(name)){
+                return contact;
+            }
+        } return null;
     }
 }

@@ -150,10 +150,15 @@ public class ContactManagerTests {
                 .build();
         contactManager.addContact(contact);
         // Act
-        contactManager.editContact(new Contact.builder()
-                .withPhone("0987654321"));
-        // Assert
-        assertEquals
+       contactManager.editContactName("Harry Potter", "Harry James Potter");
+       contactManager.editContactEmail("Harry James Potter", "harryjamespotter@hotwarts.co.uk");
+       contactManager.editContactPhone("Harry James Potter", "0987654321");
+
+       // Assert
+        Contact retrievedContact = contactManager.findContact("Harry James Potter");
+        assertEquals("Harry James Potter", retrievedContact.getName());
+        assertEquals("harryjamespotter@hotwarts.co.uk", retrievedContact.getEmail());
+        assertEquals( "0987654321", retrievedContact.getPhone());
     }
 
         }
