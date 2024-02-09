@@ -69,6 +69,13 @@ public class ContactManager {
             }
         }
     }
+    // Viewing all contacts
+    public List<Contact> getAllContacts(){
+        return new ArrayList<>(contacts);
+
+    }
+
+
 
     // Getters and Setters
     public List<Contact> getContacts(){
