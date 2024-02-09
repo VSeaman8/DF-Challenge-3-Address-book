@@ -69,10 +69,11 @@
 ## 8. As a user I want to have an interface so that it is easier to use my address book
 
 ### Tests
-1. check that the interface is user-friendly and intuitive.
-2. check that all necessary functionalities (add, search, edit, delete contacts) are accessible through the interface.
-3. Verify that the interface is responsive and functions correctly on different screen sizes and resolutions.
-4. Verify that the interface is accessible and usable for people with disabilities.
+1. Test 21:  check that add is accessible through the interface.
+2. Test 22:  check that search is accessible through the interface.
+3. Test 23:  check that edit is accessible through the interface.
+4. Test 24:  check that delete contacts is accessible through the interface.
+
 
 ---
 
