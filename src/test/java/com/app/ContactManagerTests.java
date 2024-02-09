@@ -300,9 +300,22 @@ public class ContactManagerTests {
         assertEquals(4, contacts.size());
         assertTrue(contacts.contains(contact1));
         assertTrue(contacts.contains(contact2));
+        assertTrue(contacts.contains(contact3));
+        assertTrue(contacts.contains(contact4));
 
     }
+    @Test
+    @DisplayName("Test 19: Verify that the system behaves as expected when there are no contacts in the address book.")
+    void DisplayNoContacts(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
 
+        // Act
+        List<Contact> contacts = contactManager.getAllContacts();
+
+        // Assert
+       assertTrue(contacts.isEmpty());
+    }
         }
 
 

@@ -61,7 +61,7 @@
 ### Tests
 1. Test 17: all contacts in the address book can be viewed.
 2. Test 18: correct number of contacts is displayed when viewing all contacts.
-3. Verify that the system behaves as expected when there are no contacts in the address book.
+3. Test 19: Verify that the system behaves as expected when there are no contacts in the address book.
 4. Verify that the system can handle and correctly display a large number of contacts.
 
 ---
