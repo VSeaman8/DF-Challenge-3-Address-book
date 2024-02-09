@@ -26,11 +26,16 @@ public class ContactManager {
     }
     // Edit Contacts
     public void editContactName(String oldName, String newName){
+        boolean found = false;
         for (Contact contact : contacts) {
             if (contact.getName().equals(oldName)){
                 contact.setName(newName);
+                found = true;
                 break;
             }
+        }
+        if (!found) {
+            throw new IllegalArgumentException("Contact with name " + oldName + " not found");
         }
     }
 

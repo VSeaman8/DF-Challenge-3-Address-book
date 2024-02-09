@@ -165,10 +165,7 @@ public class ContactManagerTests {
                 .build();
         contactManager.addContact(contact);
 
-        // Act
-        contactManager.editContactName("Ronauld Wheezzly", "Ronald Weasley");
-
-        // Assert
+        // & Act Assert
         assertThrows(IllegalArgumentException.class, () -> contactManager.editContactName("Ronauld Wheezzly", "Ronald Weasley"));
 
     }
