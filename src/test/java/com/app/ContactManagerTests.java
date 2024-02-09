@@ -11,85 +11,75 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ContactManagerTests {
 
-    @Nested
+    @Test
     @DisplayName("ContactManager adds contact to Contact")
 
-    class ContactManagerAddsToContact {
-        @Test
-         void testAddContact(){
-            // Arrange
-            ContactManager contactManager = new ContactManager();
-            Contact contact = new Contact.Builder()
-                    .withName("Harry Potter")
-                    .withEmail( "harrypotter@hogwarts.co.uk")
-                    .withPhone("1234567890")
-                    .build();
-            // Act
-            contactManager.addContact(contact);
-            // Assert
-            assertTrue(contactManager.getContacts().contains(contact));
+    void testAddContact(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail( "harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        // Act
+        contactManager.addContact(contact);
+        // Assert
+        assertTrue(contactManager.getContacts().contains(contact));
 
-        }
+    }
 
-        }
-    @Nested
+
+    @Test
     @DisplayName("Test 2 Added contact information is correctly stored in the address book")
 
-    class ContactInfoCorrectlyStoredInAddressBook {
-        @Test
-        void ContactInfoInAddressBook(){
-            // Arrange
-            ContactManager contactManager = new ContactManager();
-            Contact contact = new Contact.Builder()
-                    .withName("Harry Potter")
-                    .withEmail( "harrypotter@hogwarts.co.uk")
-                    .withPhone("1234567890")
-                    .build();
-            // Act
-            contactManager.addContact(contact);
-            // Assert
-            assertEquals(1, contactManager.getContacts().size(), "Contact should be added to the address book");
-            assertEquals(contact, contactManager.getContacts().get(0), "Contact details should match the added contact");
-        }
-        }
-    @Nested
+    void ContactInfoInAddressBook(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail( "harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        // Act
+        contactManager.addContact(contact);
+        // Assert
+        assertEquals(1, contactManager.getContacts().size(), "Contact should be added to the address book");
+        assertEquals(contact, contactManager.getContacts().get(0), "Contact details should match the added contact");
+    }
+
+    @Test
     @DisplayName("Test 3: Verify how the system behaves when trying to add a contact without any information")
 
-    class SystemBehaviourWhenNoInfoAdded {
+    void TestSystemBehaviorWhenNoInfoAdded(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact.Builder builder = new Contact.Builder();
 
-        @Test
-        void TestSystemBehaviorWhenNoInfoAdded(){
-            // Arrange
-            ContactManager contactManager = new ContactManager();
-            Contact.Builder builder = new Contact.Builder();
-
-            // Act & Assert
-            assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(builder.build()));
-
-        }
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> contactManager.addContact(builder.build()));
 
     }
 
-    @Nested
+
+
+    @Test
     @DisplayName("Test 4: Verify how the system behaves when trying to add a contact with only partial information")
 
-    class SystemBehaviorWithPartialInfoAdded{
-
-        @Test
-        void TestSystemBehaviorWithPartialInfoAdded(){
-            // Arrange
-            ContactManager contactManager = new ContactManager();
-            Contact.Builder builder = new Contact.Builder();
-            builder.withName("Harry");
-            Contact contact = builder.build();
-            // Act
-            contactManager.addContact(contact);
-            //Assert
-            assertTrue(contactManager.getContacts().contains(contact));
+    void TestSystemBehaviorWithPartialInfoAdded(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact.Builder builder = new Contact.Builder();
+        builder.withName("Harry");
+        Contact contact = builder.build();
+        // Act
+        contactManager.addContact(contact);
+        //Assert
+        assertTrue(contactManager.getContacts().contains(contact));
 
 
-        }
     }
+
     @Test
     @DisplayName("Test 10: Check a contact can be removed from the address book")
 
@@ -159,6 +149,28 @@ public class ContactManagerTests {
         assertEquals("Harry James Potter", retrievedContact.getName());
         assertEquals("harryjamespotter@hotwarts.co.uk", retrievedContact.getEmail());
         assertEquals( "0987654321", retrievedContact.getPhone());
+    }
+
+    @Test
+    @DisplayName("Test 13:  Verify how the system behaves when trying to edit a contact that does not exist in the address book.")
+
+    void EditContactDetailsWhenContactDoesNotExist() {
+
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail("harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        contactManager.addContact(contact);
+
+        // Act
+        contactManager.editContactName("Ronauld Wheezzly", "Ronald Weasley");
+
+        // Assert
+        assertThrows(IllegalArgumentException.class, () -> contactManager.editContactName("Ronauld Wheezzly", "Ronald Weasley"));
+
     }
 
         }

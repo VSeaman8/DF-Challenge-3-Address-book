@@ -43,8 +43,8 @@
 
 ### Tests
 1. Test 12: Edited details are correctly updated in the address book.
-2. 
-3. Verify how the system behaves when trying to edit a contact that does not exist in the address book.
+2. Test 13:  Verify how the system behaves when trying to edit a contact that does not exist in the address book.
+3.
 4. Verify how the system behaves when trying to edit a contact with invalid or incomplete information.
 
 ---
