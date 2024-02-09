@@ -316,7 +316,35 @@ public class ContactManagerTests {
         // Assert
        assertTrue(contacts.isEmpty());
     }
+
+    @Test
+    @DisplayName("Test 20: Verify that the system can handle and correctly display a large number of contacts.")
+
+    void DisplayLargeAmountOfContacts(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        int numberOfContacts = 888;
+
+        for (int i = 0; i < numberOfContacts; i++){
+            Contact contact = new Contact.Builder()
+                    .withName("Contact " + i)
+                    .withEmail("harrypotter" + i + "@hogwarts.com")
+                    .withPhone(String.valueOf(i))
+                    .build();
+            contactManager.addContact(contact);
+
         }
+        // Act
+        List<Contact> contacts = contactManager.getAllContacts();
+        // Assert
+        assertEquals(numberOfContacts, contacts.size());
+
+
+
+    }
+
+
+}
 
 
 
