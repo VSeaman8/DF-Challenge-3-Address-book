@@ -1,13 +1,7 @@
 package com.app;
-
-
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
-
 
 public class ContactManagerTests {
 
@@ -61,8 +55,6 @@ public class ContactManagerTests {
 
     }
 
-
-
     @Test
     @DisplayName("Test 4: Verify how the system behaves when trying to add a contact with only partial information")
 
@@ -76,7 +68,6 @@ public class ContactManagerTests {
         contactManager.addContact(contact);
         //Assert
         assertTrue(contactManager.getContacts().contains(contact));
-
 
     }
 
@@ -98,6 +89,7 @@ public class ContactManagerTests {
         contactManager.removeContact(contact);
         // Assert
         assertFalse(contactManager.getContacts().contains(contact));
+
     }
 
     @Test
@@ -105,7 +97,6 @@ public class ContactManagerTests {
 
     void ContactDoesNotExistTryToRemove(){
         // Arrange
-
         ContactManager contactManager = new ContactManager();
         Contact contact = new Contact.Builder()
                 .withName("Harry Potter")
@@ -189,7 +180,32 @@ public class ContactManagerTests {
         assertEquals("Harry James Potter", retrievedContact.getName());
         assertEquals("harryjamespotter@hotwarts.co.uk", retrievedContact.getEmail());
     }
+    @Test
+    @DisplayName("Test 15: check that the system does not allow duplicate phone numbers for a contact.")
+    void NoDuplicatePhoneNumbersAllowed(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact1 = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail("harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        contactManager.addContact(contact1);
+
+        // Act
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            contactManager.addContact(new Contact.Builder()
+                    .withName("Luna Lovegood")
+                    .withEmail("lunalovegood@hogwarts.co.uk")
+                    .withPhone("1234567890")
+                    .build());
+        });
+
+        // Assert
+        assertEquals("A contact with this phone number already exists", exception.getMessage());
+    }
         }
+
 
 
 
