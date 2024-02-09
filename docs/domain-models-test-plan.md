@@ -52,7 +52,7 @@
 
 ### Tests
 1. Test 15: check that the system does not allow duplicate phone numbers for a contact.
-2. Check that the system does not allow duplicate addresses for a contact.
+2. Test 16: Check that the system does not allow duplicate addresses for a contact.
 3. Verify how the system behaves when trying to add a contact with a phone number that already exists in the address book.
 4. Verify how the system behaves when trying to add a contact with an address that already exists in the address book.
 

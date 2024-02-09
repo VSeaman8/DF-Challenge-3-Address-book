@@ -204,6 +204,31 @@ public class ContactManagerTests {
         // Assert
         assertEquals("A contact with this phone number already exists", exception.getMessage());
     }
+    @Test
+    @DisplayName("Test 16: Check that the system does not allow duplicate addresses for a contact.")
+
+    void NoDuplicateEmailNumbersAllowed(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact1 = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail("harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        contactManager.addContact(contact1);
+
+        // Act
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            contactManager.addContact(new Contact.Builder()
+                    .withName("Luna Lovegood")
+                    .withEmail("harrypotter@hogwarts.co.uk")
+                    .withPhone("0987654321")
+                    .build());
+        });
+
+        // Assert
+        assertEquals("A contact with this email address number already exists", exception.getMessage());
+    }
         }
 
 
