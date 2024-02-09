@@ -18,6 +18,12 @@ public class ContactManager {
             if (existingContact.getPhone().equals(contact.getPhone())) {
                 throw new IllegalArgumentException("A contact with this phone number already exists");
             }
+
+        }
+        for (Contact existingContact : contacts){
+            if ( existingContact.getEmail().equals(contact.getEmail())){
+                throw new IllegalArgumentException("A contact with this email address number already exists");
+            }
         }
         contacts.add(contact);
 

@@ -53,15 +53,13 @@
 ### Tests
 1. Test 15: check that the system does not allow duplicate phone numbers for a contact.
 2. Test 16: Check that the system does not allow duplicate addresses for a contact.
-3. Verify how the system behaves when trying to add a contact with a phone number that already exists in the address book.
-4. Verify how the system behaves when trying to add a contact with an address that already exists in the address book.
 
 ---
 
 ## 7. As a user I want to be able to view all my contacts in the address book so that I can see how many people I know
 
 ### Tests
-1. all contacts in the address book can be viewed.
+1. Test 17: all contacts in the address book can be viewed.
 2. correct number of contacts is displayed when viewing all contacts.
 3. Verify that the system behaves as expected when there are no contacts in the address book.
 4. Verify that the system can handle and correctly display a large number of contacts.

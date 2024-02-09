@@ -1,6 +1,9 @@
 package com.app;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ContactManagerTests {
@@ -229,6 +232,36 @@ public class ContactManagerTests {
         // Assert
         assertEquals("A contact with this email address number already exists", exception.getMessage());
     }
+
+    @Test
+    @DisplayName("Test 17: all contacts in the address book can be viewed.")
+
+    void AllContactsViewed(){
+        // Arrange
+        ContactManager contactManager = new ContactManager();
+        Contact contact1 = new Contact.Builder()
+                .withName("Harry Potter")
+                .withEmail("harrypotter@hogwarts.co.uk")
+                .withPhone("1234567890")
+                .build();
+        Contact contact2 = new Contact.Builder()
+                .withName("Hermy Gr@nger")
+                .withEmail("hermyGranger@hogwarts.co.uk")
+                .withPhone("0987654321")
+                .build();
+
+        contactManager.addContact(contact1);
+        contactManager.addContact(contact2);
+        // Act
+        List<Contact> contacts = contactManager.getAllContacts();
+
+        // Assert
+        assertEquals(2, contacts.size());
+        assertTrue(contacts.contains(contact1));
+        assertTrue(contacts.contains(contact2));
+
+    }
+
         }
 
 
