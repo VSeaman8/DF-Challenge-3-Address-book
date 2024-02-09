@@ -14,7 +14,14 @@ public class ContactManager {
         if (contact.getName().isEmpty()){
             throw new IllegalArgumentException("Contact information is incomplete");
         }
+        for (Contact existingContact : contacts) {
+            if (existingContact.getPhone().equals(contact.getPhone())) {
+                throw new IllegalArgumentException("A contact with this phone number already exists");
+            }
+        }
         contacts.add(contact);
+
+
     }
 
     // Remove Contacts
