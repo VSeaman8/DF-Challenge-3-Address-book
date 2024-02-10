@@ -65,5 +65,10 @@ public class Contact {
         public Contact build() {
             return new Contact(this);
         }
+
+        @Override
+        public String toString() {
+            return "Name: " + name + ", Email: " + email + ", Phone: " + phone;
+        }
     }
 }
