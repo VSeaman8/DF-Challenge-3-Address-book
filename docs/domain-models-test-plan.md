@@ -2,6 +2,7 @@
 
 [1. User Stories and Tests](#user-stories-and-tests)
 [2. Kanban](#kanban)
+[3. AI Documentation](#AI-documentation)
 
 # User Stories and Tests
 
@@ -116,3 +117,11 @@ Note that the tests for use interface were not initiated other than Test 21.
 2.  a confirmation prompt is displayed before deleting all contacts.
 
 # Kanban
+
+![Kanban](docs/kanbanChall3.jpg)
+
+# AI Documentation
+
+## AI used to generate edge and corner cases
+
+![Edge AI](docs/test_edge_case.png)
