@@ -87,10 +87,10 @@ Note that the tests for use interface were not initiated other than Test 21.
 ## 9. AF - As a user I want to be able to search for a contact by phone number and have the results displayed so that I can see who’s number keeps calling
 
 ### Tests
-1. a contact can be searched by phone number.
-2. the correct contact is returned when searched by phone number.
-3. Verify that the system behaves as expected when searching for a phone number that does not exist in the address book.
-4. Verify that the system can handle and correctly return results for a phone number search with multiple matches.
+1. Test 25: A contact can be searched by phone number.
+2. Test 26: The correct contact is returned when searched by phone number.
+3. Test 27: The system behaves as expected when searching for a phone number that does not exist in the address book.
+4. Test 28: The system throws an exception when trying to add a contact with a duplicate phone number.
 
 ---
 
@@ -103,7 +103,7 @@ Note that the tests for use interface were not initiated other than Test 21.
 4. Verify that the system can handle and correctly return results for an email address search with multiple matches.
 ---
 
-## 11. AF As a user I want to be able to search for a contact by name, number, email address and have them displayed in alphabetical order so it is easier to find what I am looking for
+## 11. AF As a user I want to be able to search for a contact by name, number, email address and have them displayed in alphabetical order so, it is easier to find what I am looking for
 
 ### Tests
 1.  a contact can be searched by name, number, and email address.
@@ -125,3 +125,11 @@ Note that the tests for use interface were not initiated other than Test 21.
 ## AI used to generate edge and corner cases
 
 ![Edge AI](docs/test_edge_case.png)
+
+## AI used to generate Test code for Searching for a phone number
+
+![Test for Search for number](docs/AIGenTestPhone.png)
+
+## AI used to generate code for searching for a phone number
+
+![AI code generated for Searching for phone number](docs/AIGenForPhoneSearch.png)
