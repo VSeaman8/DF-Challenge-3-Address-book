@@ -1,6 +1,7 @@
 # Domain Models, Class Diagrams and Test Plan
 
 [1. User Stories and Tests](#user-stories-and-tests)
+[2. Kanban](#kanban)
 
 # User Stories and Tests
 
@@ -75,8 +76,9 @@ Note that the tests for use interface were not initiated other than Test 21.
 3. check that edit is accessible through the interface.
 4. check that delete contacts is accessible through the interface.
 5. Test 22: Adding a contact to the address book.
-7. Test 23: Removing contact by name through address book class.
-8. Test 24: Getting all contacts through address book class.
+6. Test 23: Removing contact by name through address book class.
+7. Test 24: Getting all contacts through address book class.
+8. Test 25: Editing a contact through the address book class.
 
 
 ---
@@ -112,3 +114,5 @@ Note that the tests for use interface were not initiated other than Test 21.
 ### Tests
 1.  all contacts can be deleted at once.
 2.  a confirmation prompt is displayed before deleting all contacts.
+
+# Kanban

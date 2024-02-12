@@ -55,6 +55,12 @@ public class AddressBook {
         display.displaySearchResults(contacts);
         return contacts;
     }
+    // Editing a contact
+    public void editContact(String oldName, String newName, String newEmail, String newPhone) {
+        contactManager.editContactName(oldName, newName);
+        contactManager.editContactEmail(newName, newEmail);
+        contactManager.editContactPhone(newName, newPhone);
+    }
 
 }
 

@@ -2,10 +2,10 @@ classDiagram
 
     class AddressBook{
         - contacts : List<Contact>
-        + addContact(contact: Contact) void
-        + removeContact(criteria: String): List<Contact>
-        + searchContact(criteria: String) List<cContact>
-        + displayAllContacts(): List<cContact>
+        + addContactToAddressBook(contact: Contact) void
+        + removeContactByName(criteria: String): List<Contact>
+        + searchName(criteria: String) List<cContact>
+        + getAllContacts(): List<cContact>
         + editContact(oldContact: Contact, newContact: Contact): void
     }
 
