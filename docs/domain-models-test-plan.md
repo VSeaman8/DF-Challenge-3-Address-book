@@ -67,12 +67,16 @@
 ---
 
 ## 8. As a user I want to have an interface so that it is easier to use my address book
+Note that the tests for use interface were not initiated other than Test 21.
 
 ### Tests
 1. Test 21:  check that add is accessible through the interface.
-2. Test 22:  check that search is accessible through the interface.
-3. Test 23:  check that edit is accessible through the interface.
-4. Test 24:  check that delete contacts is accessible through the interface.
+2. check that search is accessible through the interface.
+3. check that edit is accessible through the interface.
+4. check that delete contacts is accessible through the interface.
+5. Test 22: Adding a contact to the address book.
+7. Test 23: Removing contact by name through address book class.
+8. Test 24: Getting all contacts through address book class.
 
 
 ---
