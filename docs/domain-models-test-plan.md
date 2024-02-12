@@ -79,7 +79,7 @@ Note that the tests for use interface were not initiated other than Test 21.
 5. Test 22: Adding a contact to the address book.
 6. Test 23: Removing contact by name through address book class.
 7. Test 24: Getting all contacts through address book class.
-8. Test 25: Editing a contact through the address book class.
+
 
 
 ---

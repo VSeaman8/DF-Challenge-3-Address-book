@@ -1,5 +1,6 @@
 package com.app;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -14,11 +15,12 @@ public class UserInterface {
     public void start() {
         while (true) {
             System.out.println("1. Add contact");
-            System.out.println("2. Search for contact");
-            System.out.println("3. Remove contact");
-            System.out.println("4. View all contacts");
-            System.out.println("5. Edit Contact");
-            System.out.println("5. exit");
+            System.out.println("2. Search for contact by name");
+            System.out.println("3. Search for contact by phone number");
+            System.out.println("4. Remove contact");
+            System.out.println("5. View all contacts");
+            System.out.println("6. Edit Contact");
+            System.out.println("7. exit");
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
@@ -30,15 +32,18 @@ public class UserInterface {
                     searchForContact();
                     break;
                 case "3":
-                    removeContact();
+                    searchForContactByPhoneNumber();
                     break;
                 case "4":
-                    viewAllContacts();
+                    removeContact();
                     break;
                 case "5":
-                    editContact();
+                    viewAllContacts();
                     break;
                 case "6":
+                    editContact();
+                    break;
+                case "7":
                     System.out.println("Exiting...");
                     return;
                 default:
@@ -94,6 +99,20 @@ public class UserInterface {
         String newPhone = scanner.nextLine().toLowerCase();
         addressBook.editContact(oldName, newName, newEmail, newPhone);
 
+    }
+    // AI GENERATED CODE - see documentation in domain model
+    // Search for Contact by Phone Number
+    private void searchForContactByPhoneNumber() {
+        System.out.print("Enter phone number: ");
+        String phoneNumber = scanner.nextLine().toLowerCase();
+        List<Contact> contacts = addressBook.searchByPhoneNumber(phoneNumber);
+        if (contacts.isEmpty()) {
+            System.out.println("No contacts found with that phone number.");
+        } else {
+            for (Contact contact : contacts) {
+                System.out.println(contact);
+            }
+        }
     }
 
 

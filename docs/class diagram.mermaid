@@ -48,9 +48,7 @@ classDiagram
     + displayContacts(contact: List<cContact>): void
     }
 
-    class FileHandler {
 
-    }
 
     class Display {
         + displayResults(contact:Contact): void
@@ -62,6 +60,7 @@ classDiagram
 
 UserInterface --> AddressBook
 AddressBook  --> ContactManager
+AddressBook --> Display
 AddressBook --> SearchEngine
 ContactManager --> Contact
 ContactManager --> DangerAllContacts

@@ -75,8 +75,6 @@ public class ContactManager {
 
     }
 
-
-
     // Getters and Setters
     public List<Contact> getContacts(){
         return contacts;
